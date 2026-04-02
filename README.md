@@ -51,12 +51,12 @@ We benchmarked the training dynamics using the AdamW optimizer. The following fi
 #### Train Loss (Snapshot at step 20000)
 The chart shows the raw train loss and its Exponential Moving Average (EMA, $\alpha=0.1$). We observe a smooth descent, indicating stable training.
 
-![AdamW Train Loss](image_8.png)
+![AdamW Train Loss](snapshot_step_20000_train_loss_ema.png)
 
 #### Validation Accuracy (Snapshot at step 20000)
 The chart shows the validation accuracy over steps. The best val accuracy achieved is approximately 0.5858, which is a significant improvement over random chance (0.5), showing that the RM has successfully learned human preferences.
 
-![AdamW Val Accuracy](image_7.png)
+![AdamW Val Accuracy](snapshot_step_20000_val_acc.png)
 
 ---
 
