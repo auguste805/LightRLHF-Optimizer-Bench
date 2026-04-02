@@ -109,11 +109,11 @@ python train.py --optim-name adamw --lr 5e-5 --lora-r 8
 #### 训练损失 (20000 步快照)
 图表展示了原始训练损失及其指数移动平均 (EMA, $\alpha=0.1$)。我们观察到平滑下降，表明训练稳定。
 
-![AdamW Train Loss](image_8.png)
-*(注意：请确保 image_8.png 文件已存在于您的仓库根目录下)*
+![AdamW Train Loss](snapshot_step_20000_train_loss_ema.png)
+
 
 #### 验证准确率 (20000 步快照)
 图表展示了随时间步变化的验证准确率。实现的最佳验证准确率约为 0.5858，相对于随机概率 (0.5) 有显著提高，表明奖励模型已成功学习人类偏好。
 
-![AdamW Val Accuracy](image_7.png)
-*(注意：请确保 image_7.png 文件已存在于您的仓库根目录下)*
+![AdamW Val Accuracy](snapshot_step_20000_val_acc.png)
+
