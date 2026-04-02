@@ -5,7 +5,7 @@
 ## English
 
 ### 🎯 Project Objective
-This repository provides a lightweight, highly reproducible framework for training **Reward Models (RM)** in the RLHF pipeline. It is specifically designed to benchmark custom optimization algorithms (e.g., PID-based optimizers like **AdaSPID** and **RoPID**) against standard baselines (AdamW) on consumer-grade GPUs.
+This repository provides a lightweight, highly reproducible framework for training **Reward Models (RM)** in the RLHF pipeline. It is specifically designed to benchmark custom optimization algorithms against standard baselines (AdamW) on consumer-grade GPUs.
 
 By using **GPT-2 Small** combined with **LoRA**, this project allows researchers to explore the dynamics of preference learning and non-convex optimization without requiring industrial-scale compute resources.
 
@@ -28,9 +28,6 @@ You can toggle between different optimizers and hyperparameters:
 ```bash
 # Baseline: AdamW
 python train.py --optimizer adamw --lr 5e-5 --lora_rank 8
-
-# Experimental: AdaSPID
-python train.py --optimizer adaspid --lr 1e-4 --lora_rank 8
 ```
 
 ### ⚙️ Parameter Tuning
@@ -39,14 +36,14 @@ python train.py --optimizer adaspid --lr 1e-4 --lora_rank 8
 | `--lr` | Learning rate | `5e-6` to `1e-4` |
 | `--lora_rank` | Rank of LoRA update matrices | `4`, `8`, `16` |
 | `--batch_size` | Training batch size | `4` to `16` (depends on VRAM) |
-| `--optimizer` | Optimization algorithm | `adamw`, `adaspid`, `ropid` |
+| `--optimizer` | Optimization algorithm | `adamw`, `sgd`, `rmsprop` |
 
 ---
 
 ## 中文
 
 ### 🎯 实验目的
-本项目提供了一个轻量化、高可复现的 RLHF **奖励模型 (RM)** 训练框架。其核心目标是在消费级 GPU 上，针对自定义优化算法（如基于 PID 控制理论的 **AdaSPID** 和 **RoPID**）与标准基准算法（AdamW）在偏好学习任务中的表现进行 Benchmark 评测。
+本项目提供了一个轻量化、高可复现的 RLHF **奖励模型 (RM)** 训练框架。其核心目标是在消费级 GPU 上，针对自定义优化算法与标准基准算法（AdamW）在偏好学习任务中的表现进行 Benchmark 评测。
 
 通过结合 **GPT-2 Small** 与 **LoRA** 技术，本项目使研究者能够在不需要大规模计算集群的情况下，深入探索非凸随机优化在模型对齐阶段的收敛动力学。
 
@@ -69,9 +66,6 @@ pip install -r requirements.txt
 ```bash
 # 基准测试：AdamW
 python train.py --optimizer adamw --lr 5e-5 --lora_rank 8
-
-# 实验测试：AdaSPID
-python train.py --optimizer adaspid --lr 1e-4 --lora_rank 8
 ```
 
 ### ⚙️ 参数调整
